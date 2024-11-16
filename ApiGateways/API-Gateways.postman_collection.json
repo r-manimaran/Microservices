@@ -1,0 +1,225 @@
+{
+	"info": {
+		"_postman_id": "f700a225-7aab-4eb5-bbf6-586a4e7833e6",
+		"name": "API-Gateways",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "442358"
+	},
+	"item": [
+		{
+			"name": "Without-Gateway",
+			"item": [
+				{
+					"name": "GetProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5167/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5167",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5198/Users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5198",
+							"path": [
+								"Users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "AuthenticateAdminandGetToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"admin\",\r\n  \"password\": \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5217/api/Accounts/Authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5217",
+							"path": [
+								"api",
+								"Accounts",
+								"Authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AuthenticateUserAndGetToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"user1\",\r\n  \"password\": \"user1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5217/api/Accounts/Authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5217",
+							"path": [
+								"api",
+								"Accounts",
+								"Authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ocelot",
+			"item": [
+				{
+					"name": "Ocelot-Products",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiYWRtaW4iLCJSb2xlIjoiQWRtaW5pc3RyYXRvciIsIm5iZiI6MTczMTcxMjE0NSwiZXhwIjoxNzMxNzEzMzQ1LCJpYXQiOjE3MzE3MTIxNDV9.7KGyPKtxp0zfSNvcw6NFBXptmDOJUCYvHBOsvlFYS6U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5126/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5126",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ocelot-Users",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Ocelot-Authentication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5126/api/Accounts/Authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5126",
+							"path": [
+								"api",
+								"Accounts",
+								"Authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "YARP",
+			"item": [
+				{
+					"name": "yarp-Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5006/Products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5006",
+							"path": [
+								"Products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "yarp-Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5006/api/Users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5006",
+							"path": [
+								"api",
+								"Users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
