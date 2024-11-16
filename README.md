@@ -1,2 +1,2 @@
 # Microservices
-Microservices using dotnet, Ocelot API Gateway, separate databases
+- Microservices using dotnet, Ocelot and YARP API Gateway.
